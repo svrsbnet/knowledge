@@ -7,6 +7,7 @@ plugin:
 
 nav:
 #  - About: index.md
+  - Ansible: ansible.md
   - Containers: containers.md
   - Kubernetes: kubernetes.md
-  - Ansible: ansible.md
+  - Tools: tools.md
