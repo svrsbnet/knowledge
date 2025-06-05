@@ -1,0 +1,152 @@
+# Git Fast guide
+
+~/Amsterdam/
+├── svrsbnet/
+│   ├── personal/
+│   ├── containers/         # Proyectos relacionados con Docker/Podman
+│   ├── kubernetes/         # Proyectos de K8s, clusters, Helm, etc.
+│   └── python/             # Scripts, APIs, automatizaciones, etc.
+├── equinix/
+│   └── ems/
+│       └── devops/             # Proyecto principal
+│           ├── ci-cd/          # Pipelines, runners, plantillas
+│           ├── infra/          # Terraform, Ansible, IaC
+│           └── monitoring/     # Prometheus, Grafana, alertas
+
+~/dev/
+├── personal/
+│   ├── github-usuario/
+│   │   ├── containers/
+│   │   ├── kubernetes/
+│   │   └── python/
+│   └── otros/
+│       └── proyectos-experimentales/
+├── trabajo/
+│   ├── gitlab-empresa/
+│   │   └── devops/
+│   │       ├── ci-cd/
+│   │       ├── infra/
+│   │       └── monitoring/
+│   └── clientes/
+│       └── cliente-x/
+│           └── proyecto-x/
+
+## Git config por cuenta
+
+  [includeIf "gitdir:~/dev/github/personal/"]
+    path = ~/.gitconfig-personal
+
+  [includeIf "gitdir:~/dev/gitlab/company/"]
+    path = ~/.gitconfig-work
+
+  [user]
+    name = Tu Nombre
+    email = <tunombre@gmail.com>
+
+  [user]
+    name = Tu Nombre Profesional
+    email = <tunombre@tuempresa.com>
+
+## Alias rápidos (opcional)
+
+Agrega estos a tu .zshrc si lo deseas:
+
+  alias cdgh="cd ~/dev/github/personal"
+  alias cdgl="cd ~/dev/gitlab/company/devops"
+
+Ubicación del archivo .gitconfig
+Archivo global (de usuario):
+
+Se encuentra en tu directorio personal:
+
+~/.gitconfig
+
+O en ruta completa:
+
+/Users/tu-usuario/.gitconfig
+
+Este archivo es el que Git usa para configuraciones de usuario, como nombre, email, alias, color del output, etc.
+2. Archivo local (por proyecto):
+
+Cada repositorio Git también puede tener su propia configuración:
+
+/path/a/tu/repositorio/.git/config
+
+Este afecta solo a ese repositorio. Git aplica configuraciones en este orden de prioridad:
+
+1. Local (~/.git/config) — más específico
+2. Global (~/.gitconfig)
+3. Sistema (/etc/gitconfig)
+
+🧪 ¿Cómo saber cuál estás usando?
+
+Puedes ver tu configuración actual con:
+
+git config --list --show-origin
+
+Esto te muestra todas las configuraciones activas y de qué archivo vienen.
+🛠️ Para editar el .gitconfig global
+
+nano ~/.gitconfig
+
+O si prefieres abrirlo con Visual Studio Code:
+
+code ~/.gitconfig
+
+¿Quieres que te dé un .gitconfig base ya listo con los includeIf para múltiples cuentas?
+You said:
+Si por favot
+ChatGPT said:
+
+Perfecto. Aquí tienes una configuración lista para copiar y pegar, que te permite tener dos perfiles de Git:
+
+    Uno personal (para proyectos en GitHub)
+
+    Otro profesional (para proyectos de tu empresa en GitLab)
+
+📄 1. ~/.gitconfig (archivo principal)
+
+  [user]
+    name = Tu Nombre
+    email = <tunombre@gmail.com>
+    # Este es el perfil por defecto si Git no encuentra un match en includeIf
+
+[includeIf "gitdir:~/dev/github/personal/"]
+  path = ~/.gitconfig-personal
+
+[includeIf "gitdir:~/dev/gitlab/company/"]
+  path = ~/.gitconfig-work
+
+[core]
+  editor = nano
+  autocrlf = input
+
+[color]
+  ui = auto
+
+[alias]
+  st = status
+  co = checkout
+  ci = commit
+  br = branch
+  lg = log --oneline --graph --all
+
+📄 2. ~/.gitconfig-personal
+
+[user]
+  name = Tu Nombre
+  email = <tunombre@gmail.com>
+
+📄 3. ~/.gitconfig-work
+
+[user]
+  name = Tu Nombre Profesional
+  email = <tunombre@tuempresa.com>
+
+✅ ¿Qué hace esta configuración?
+
+    Cuando estés dentro de ~/dev/github/personal/**, Git usará el perfil personal.
+
+    Cuando estés dentro de ~/dev/gitlab/company/**, Git usará el perfil profesional.
+
+    En cualquier otro sitio, usará el perfil por defecto definido en [user] en ~/.gitconfig.
