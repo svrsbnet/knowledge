@@ -1,0 +1,9 @@
+site_name: Knowledge
+theme:
+  name: material
+
+nav:
+  - About: index.md
+  - Containers: containers.md
+  - Kubernetes: kubernetes.md
+  - Python: python.md
