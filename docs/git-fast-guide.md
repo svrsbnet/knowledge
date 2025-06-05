@@ -1,17 +1,6 @@
 # Git Fast guide
 
-~/Amsterdam/
-├── svrsbnet/
-│   ├── personal/
-│   ├── containers/         # Proyectos relacionados con Docker/Podman
-│   ├── kubernetes/         # Proyectos de K8s, clusters, Helm, etc.
-│   └── python/             # Scripts, APIs, automatizaciones, etc.
-├── equinix/
-│   └── ems/
-│       └── devops/             # Proyecto principal
-│           ├── ci-cd/          # Pipelines, runners, plantillas
-│           ├── infra/          # Terraform, Ansible, IaC
-│           └── monitoring/     # Prometheus, Grafana, alertas
+
 
 ~/dev/
 ├── personal/
@@ -156,3 +145,38 @@ Perfecto. Aquí tienes una configuración lista para copiar y pegar, que te perm
   python3 -m venv venv
   source venv/bin/activate
   
+
+## Paso 1: Instalar gh (si aún no lo tienes)
+
+En macOS, con Homebrew:
+
+  brew install gh
+
+Luego autentícate:
+
+  gh auth login
+
+## Paso 2: Crear el repo desde tu proyecto local
+
+En tu proyecto local:
+
+  cd ~/mis-proyectos/mi-nuevo-repo
+  git init
+  git add .
+  git commit -m "Primer commit"
+
+Ahora crea el repositorio en GitHub con:
+
+  gh repo create tu-usuario/mi-nuevo-repo --public --source=. --remote=origin (--push)
+
+O, si prefieres privado:
+
+  gh repo create tu-usuario/mi-nuevo-repo --private --source=. --remote=origin --push
+
+Esto hace todo en un paso:
+
+    Crea el repo en GitHub
+
+    Lo enlaza como origin
+
+    Hace git push
