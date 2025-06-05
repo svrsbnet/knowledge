@@ -1,7 +1,9 @@
 # Hello idiot
 
 ---
+
 ![alt text](../imgs/svrsbnet.jpg)
+
 ---
 
 Este sitio prtende tener información sobre Contenedores, Kubernetes, Python y más cosas

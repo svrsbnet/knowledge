@@ -150,3 +150,4 @@ Perfecto. Aquí tienes una configuración lista para copiar y pegar, que te perm
     Cuando estés dentro de ~/dev/gitlab/company/**, Git usará el perfil profesional.
 
     En cualquier otro sitio, usará el perfil por defecto definido en [user] en ~/.gitconfig.
+    
