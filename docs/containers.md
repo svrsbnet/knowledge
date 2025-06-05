@@ -1,71 +1,90 @@
-# Commandos comunes
+# About Containers
 
-## Arrancar contenedor
+- [Common contaiers commands](README.md#common-contaiers-commands)
+- [Common images commands](README.md#common-images-commands)
+
+## Common contaiers commands
+
+### Run container
 
     docker run --help
 
-Opcions comunes:
+Common options
 
-    -d: Arranca el contenedor en segundo plano.
-    -p: Mapea un puerto del contenedor al puerto del host.
-    -v: Mapea un volumen del host al contenedor.
-    --name: Asigna un nombre al contenedor.
-    --rm: Elimina el contenedor al pararlo.
-    -e: Define una variable de entorno.
-    --env-file: Define un archivo de variables de entorno.
-    --restart: Define la política de reinicio
+    -d:             # Arranca el contenedor en segundo plano.
+    -p:             # Mapea un puerto del contenedor al puerto del host.
+    -v:             # Mapea un volumen del host al contenedor.
+    --name:         # Asigna un nombre al contenedor.
+    --rm:           # Elimina el contenedor al pararlo.
+    -e:             # Define una variable de entorno.
+    --env-file:     # Define un archivo de variables de entorno.
+    --restart:      # Define la política de reinicio
 
-Ejemplos:
+Examples
 
     docker run -it -d ubuntu
     docker run -d ubuntu --name <container_name>
 
-## Consultar estado de los contenedores
+### Check conatiners status
 
     docker ps --help
 
-Ejemplos:
+Examples
 
     docker ps
     docker ps -a
 
-## Ver la salida del contenedor
+### Check logs containers
 
     docker logs --help
 
-Ejemplos:
+Examples
 
     docker logs -f <container_id>
     docker logs -f <container_id>
 
-## Ver salida a tiempo real
+### Atach to conatiners
 
     docker attach --help
 
-## Conectar a un contenedor
+### Run remote commands
 
-    docker exec --help  # (docker exec -it) 
+    docker exec --help
 
-## Iniciar un contenedor
+Examples
+
+    docker exec f5783de3f3b3 df -H
+
+### Conectar a un contenedor
+
+    docker exec --help 
+
+Examples
+
+    docker exec -it
+
+### Start containers
 
     docker start --help
 
-## Reiniciar un contenedor
+### Restart containers
 
     docker retsart --help
 
-## Parar un contenedor
+### Stop containers
 
     docker stop --help
 
-## Eliminar contemedor
+### Delete containers
 
     docker rm --help
 
-## Eliminar todos los contenedores parados
+### Delete all stopped containers
 
     docker container prune
 
-docker image list
+---
 
-docker images list
+## Common images commands
+
+blablabla
