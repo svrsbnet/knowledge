@@ -2,7 +2,7 @@
 
 ---
 
-![alt text](../imgs/svrsbnet.jpg)
+![svrsbnet](../imgs/svrsbnet.jpg)
 
 ---
 
