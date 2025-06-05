@@ -1,5 +1,7 @@
 # About Containers
 
+Index
+
 - [Common contaiers commands](README.md#common-contaiers-commands)
 - [Common images commands](README.md#common-images-commands)
 
@@ -7,10 +9,15 @@
 
 ### Run container
 
+```bash
+
     docker run --help
+
+```
 
 Common options
 
+```bash
     -d:             # Arranca el contenedor en segundo plano.
     -p:             # Mapea un puerto del contenedor al puerto del host.
     -v:             # Mapea un volumen del host al contenedor.
@@ -19,6 +26,7 @@ Common options
     -e:             # Define una variable de entorno.
     --env-file:     # Define un archivo de variables de entorno.
     --restart:      # Define la política de reinicio
+```
 
 Examples
 
