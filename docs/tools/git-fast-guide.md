@@ -1,7 +1,6 @@
 # Git Fast guide
 
-
-
+···
 ~/dev/
 ├── personal/
 │   ├── github-usuario/
@@ -19,59 +18,62 @@
 │   └── clientes/
 │       └── cliente-x/
 │           └── proyecto-x/
+···
 
 ## Git config por cuenta
 
-  [includeIf "gitdir:~/dev/github/personal/"]
-    path = ~/.gitconfig-personal
+    [includeIf "gitdir:~/dev/github/personal/"]
+      path = ~/.gitconfig-personal
 
-  [includeIf "gitdir:~/dev/gitlab/company/"]
-    path = ~/.gitconfig-work
+    [includeIf "gitdir:~/dev/gitlab/company/"]
+      path = ~/.gitconfig-work
 
-  [user]
-    name = Tu Nombre
-    email = <tunombre@gmail.com>
+    [user]
+      name = Tu Nombre
+      email = <tunombre@gmail.com>
 
-  [user]
-    name = Tu Nombre Profesional
-    email = <tunombre@tuempresa.com>
+    [user]
+      name = Tu Nombre Profesional
+      email = <tunombre@tuempresa.com>
 
 ## Alias rápidos (opcional)
 
 Agrega estos a tu .zshrc si lo deseas:
 
-  alias cdgh="cd ~/dev/github/personal"
-  alias cdgl="cd ~/dev/gitlab/company/devops"
+    alias cdgh="cd ~/dev/github/personal"
+    alias cdgl="cd ~/dev/gitlab/company/devops"
 
-Ubicación del archivo .gitconfig
+## Ubicación del archivo .gitconfig
+
 Archivo global (de usuario):
 
 Se encuentra en tu directorio personal:
 
-~/.gitconfig
+    ~/.gitconfig
 
 O en ruta completa:
 
-/Users/tu-usuario/.gitconfig
+    /Users/tu-usuario/.gitconfig
 
 Este archivo es el que Git usa para configuraciones de usuario, como nombre, email, alias, color del output, etc.
-2. Archivo local (por proyecto):
+
+Archivo local (por proyecto):
 
 Cada repositorio Git también puede tener su propia configuración:
 
-/path/a/tu/repositorio/.git/config
+    /path/a/tu/repositorio/.git/config
 
 Este afecta solo a ese repositorio. Git aplica configuraciones en este orden de prioridad:
 
-1. Local (~/.git/config) — más específico
-2. Global (~/.gitconfig)
-3. Sistema (/etc/gitconfig)
+  1. Local (~/.git/config) — más específico
+  2. Global (~/.gitconfig)
+  3. Sistema (/etc/gitconfig)
 
-🧪 ¿Cómo saber cuál estás usando?
+¿Cómo saber cuál estás usando?
 
 Puedes ver tu configuración actual con:
 
-git config --list --show-origin
+    git config --list --show-origin
 
 Esto te muestra todas las configuraciones activas y de qué archivo vienen.
 🛠️ Para editar el .gitconfig global
