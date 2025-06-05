@@ -151,3 +151,8 @@ Perfecto. Aquí tienes una configuración lista para copiar y pegar, que te perm
 
     En cualquier otro sitio, usará el perfil por defecto definido en [user] en ~/.gitconfig.
     
+## Crea el entorno virtual y activa
+
+  python3 -m venv venv
+  source venv/bin/activate
+  
