@@ -122,7 +122,7 @@ Perfecto. Aquí tienes una configuración lista para copiar y pegar, que te perm
   br = branch
   lg = log --oneline --graph --all
 
-📄 2. ~/.gitconfig-personal
+~/.gitconfig-personal
 
 [user]
   name = Tu Nombre
@@ -147,7 +147,6 @@ Perfecto. Aquí tienes una configuración lista para copiar y pegar, que te perm
   python3 -m venv venv
   source venv/bin/activate
   
-
 ## Paso 1: Instalar gh (si aún no lo tienes)
 
 En macOS, con Homebrew:

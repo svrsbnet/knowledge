@@ -4,8 +4,8 @@
 
 ### Git
 
-- [Git Fast Guide](tools/git-fast-guide.md)
+- [Git Fast Guide](git-fast-guide.md)
 
 ### Terraform
 
-- [Terraform Fast Guide](tools/terraform-fast-guide.md)
+- [Terraform Fast Guide](terraform-fast-guide.md)
