@@ -1,3 +1,7 @@
+# Ignore MacOS files
+.DS_store
+# Ignore Python bytecode files
 venv/
 __pycache__/
+# Ignore particular files
 site/
