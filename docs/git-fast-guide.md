@@ -181,3 +181,7 @@ Esto hace todo en un paso:
     Lo enlaza como origin
 
     Hace git push
+
+Crear rama de Git
+
+  git checkout -b <branch>

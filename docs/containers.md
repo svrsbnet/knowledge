@@ -49,6 +49,10 @@ Examples
 
     docker attach --help
 
+### Inspect to conatiners (show all container info in json format)
+
+    podman inspect --help
+
 ### Run remote commands
 
     docker exec --help
@@ -90,3 +94,14 @@ Examples
 ## Common images commands
 
 blablabla
+
+    docker pull  --help
+
+Examples
+
+    docker pull nginx
+    docker pull alpine
+
+
+
+    docker history  --help
